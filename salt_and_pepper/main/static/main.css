@@ -1,0 +1,9 @@
+.card-icon-container {
+    width: 33.3%;
+    float: left;
+}
+
+
+.clearfix-div {
+    clear: both;
+}
