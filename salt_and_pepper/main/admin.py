@@ -1,7 +1,5 @@
 from django.contrib import admin
-from main.models import Recipe, Ingredient, RecipeIngredient
+from main.models import Recipe
 
 # Register your models here.
 admin.site.register(Recipe)
-admin.site.register(Ingredient)
-admin.site.register(RecipeIngredient)
