@@ -19,71 +19,29 @@
     </div>
 
     <div class="row">
-      <div class="col-lg-4">
+      {% for recipe in recipes %}
+        <div class="col-lg-4">
 
-        <div class="card">
-          <img src="https://hot-thai-kitchen.com/wp-content/uploads/2013/03/tom-yum-goong-blog.jpg" class="card-img-top" alt="Tom yum kung">
-          <div class="card-body">
-            <h5 class="card-title">Tom yum kung</h5>
-            <p class="card-text">
-              Also called tom yum kung, this hot and sour shrimp soup is generally touted as the dish that defines Thai cuisine. It's derived from the Thai words “tom,” which refers to the boiling process, “yam,” a Thai spicy and sour salad, and “kung” for shrimp.  
-            </p>
+          <div class="card">
+            <img src="{{ recipe.photo }}" class="card-img-top" alt="Tom yum kung">
+            <div class="card-body">
+              <h5 class="card-title">{{ recipe.name }}</h5>
+              <p class="card-text">
+                {{ recipe.short_description }}
+              </p>
 
-            <div class="card-icon-container"><i class="fa-solid fa-carrot"></i> Lunch</div> 
-            <div class="card-icon-container"><i class="fa-solid fa-dumbbell"></i> Medium</div> 
-            <div class="card-icon-container"><i class="fa-regular fa-clock"></i> 30 mins</div>
-            <div class="clearfix-div"></div> 
-            
-            
-            <a href="#" class="btn btn-primary mt-3">Go somewhere</a>
+              <div class="card-icon-container"><i class="fa-solid fa-carrot"></i> {{ recipe.ideal_for }}</div> 
+              <div class="card-icon-container"><i class="fa-solid fa-dumbbell"></i> {{ recipe.difficulty }}</div> 
+              <div class="card-icon-container"><i class="fa-regular fa-clock"></i> {{ recipe.preparation_time }} mins</div>
+              <div class="clearfix-div"></div> 
+              
+              
+              <a href="/recipe-details/{{ recipe.id }}" class="btn btn-primary mt-3">More details</a>
+            </div>
           </div>
+
         </div>
-
-      </div>
-      <div class="col-lg-4">
-        
-        <div class="card">
-          <img src="https://hot-thai-kitchen.com/wp-content/uploads/2013/03/tom-yum-goong-blog.jpg" class="card-img-top" alt="Tom yum kung">
-          <div class="card-body">
-            <h5 class="card-title">Tom yum kung</h5>
-            <p class="card-text">
-              Also called tom yum kung, this hot and sour shrimp soup is generally touted as the dish that defines Thai cuisine. It's derived from the Thai words “tom,” which refers to the boiling process, “yam,” a Thai spicy and sour salad, and “kung” for shrimp.  
-            </p>
-
-            <div class="card-icon-container"><i class="fa-solid fa-carrot"></i> Lunch</div> 
-            <div class="card-icon-container"><i class="fa-solid fa-dumbbell"></i> Medium</div> 
-            <div class="card-icon-container"><i class="fa-regular fa-clock"></i> 30 mins</div>
-            <div class="clearfix-div"></div> 
-            
-            
-            <a href="#" class="btn btn-primary mt-3">Go somewhere</a>
-          </div>
-        </div>
-
-
-      </div>
-      <div class="col-lg-4">
-        
-        <div class="card">
-          <img src="https://hot-thai-kitchen.com/wp-content/uploads/2013/03/tom-yum-goong-blog.jpg" class="card-img-top" alt="Tom yum kung">
-          <div class="card-body">
-            <h5 class="card-title">Tom yum kung</h5>
-            <p class="card-text">
-              Also called tom yum kung, this hot and sour shrimp soup is generally touted as the dish that defines Thai cuisine. It's derived from the Thai words “tom,” which refers to the boiling process, “yam,” a Thai spicy and sour salad, and “kung” for shrimp.  
-            </p>
-
-            <div class="card-icon-container"><i class="fa-solid fa-carrot"></i> Lunch</div> 
-            <div class="card-icon-container"><i class="fa-solid fa-dumbbell"></i> Medium</div> 
-            <div class="card-icon-container"><i class="fa-regular fa-clock"></i> 30 mins</div>
-            <div class="clearfix-div"></div> 
-            
-            
-            <a href="#" class="btn btn-primary mt-3">Go somewhere</a>
-          </div>
-        </div>
-
-
-      </div>
+      {% endfor %}
     </div>
 </div>
 {% endblock %}
