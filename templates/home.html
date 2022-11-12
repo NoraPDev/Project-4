@@ -12,36 +12,36 @@
     </div>
   </div>
 
-    <div class="row">
-      <div class="col-sm-12" >
-        <h3>Recipes of the day</h3>
-      </div>
+  <div class="row">
+    <div class="col-sm-12" >
+      <h3>Recipes of the day</h3>
     </div>
+  </div>
 
-    <div class="row">
-      {% for recipe in recipes %}
-        <div class="col-lg-4">
+  <div class="row">
+    {% for recipe in recipes %}
+      <div class="col-lg-4">
 
-          <div class="card">
-            <img src="{{ recipe.photo }}" class="card-img-top" alt="Tom yum kung">
-            <div class="card-body">
-              <h5 class="card-title">{{ recipe.name }}</h5>
-              <p class="card-text">
-                {{ recipe.short_description }}
-              </p>
+        <div class="card mb-3 ">
+          <img src="{{ recipe.photo }}" class="card-img-top" alt="Tom yum kung">
+          <div class="card-body">
+            <h5 class="card-title">{{ recipe.name }}</h5>
+            <p class="card-text">
+              {{ recipe.short_description }}
+            </p>
 
-              <div class="card-icon-container"><i class="fa-solid fa-carrot"></i> {{ recipe.ideal_for }}</div> 
-              <div class="card-icon-container"><i class="fa-solid fa-dumbbell"></i> {{ recipe.difficulty }}</div> 
-              <div class="card-icon-container"><i class="fa-regular fa-clock"></i> {{ recipe.preparation_time }} mins</div>
-              <div class="clearfix-div"></div> 
-              
-              
-              <a href="/recipe-details/{{ recipe.id }}" class="btn btn-primary mt-3">More details</a>
-            </div>
+            <div class="card-icon-container"><i class="fa-solid fa-carrot"></i> {{ recipe.ideal_for }}</div> 
+            <div class="card-icon-container"><i class="fa-solid fa-dumbbell"></i> {{ recipe.difficulty }}</div> 
+            <div class="card-icon-container"><i class="fa-regular fa-clock"></i> {{ recipe.preparation_time }} mins</div>
+            <div class="clearfix-div"></div> 
+            
+            
+            <a href="/recipe-details/{{ recipe.id }}" class="btn btn-primary mt-3">More details</a>
           </div>
-
         </div>
-      {% endfor %}
-    </div>
+
+      </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}
