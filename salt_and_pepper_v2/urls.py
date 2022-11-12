@@ -19,12 +19,13 @@ import recipe_collection.views as Views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('recipe-details/<int:id>/', Views.recipe_details),
-    path('delete-recipe/<int:id>/', Views.delete_recipe),
-    path('update-recipe/<int:id>/', Views.update_recipe),
-    path('edit-recipe/', Views.edit_recipe),
-    path('recipe-list/', Views.recipe_list),
-    path('stored-recipe/', Views.new_recipe),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('', Views.home)
+    path('recipes/', Views.recipes, name="recipes"),
+    path('recipe-details/<int:id>/', Views.recipe_details, name="recipe_details"),
+    path('delete-recipe/<int:id>/', Views.delete_recipe, name="delete_recipe"),
+    path('update-recipe/<int:id>/', Views.update_recipe, name="update_recipe_form"),
+    path('edit-recipe/', Views.edit_recipe, name="edit_recipe_process"),
+    path('stored-recipe/', Views.new_recipe, name="new_recipe_process"),
+    path('accounts/', include('allauth.urls')),
+    path('accounts/profile/', Views.recipe_list, name="profile_page"),
+    path('', Views.home, name="home")
 ]
