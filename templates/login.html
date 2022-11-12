@@ -1,14 +1,25 @@
-<h3>Login</h3>
-<form>
-    <div class="mb-3">
-        <label for="username">Username</label>
-        <input type="text" class="form-control" id="username">
-    </div>
-    <div class="mb-3">
-        <label for="pass">Password</label>
-        <input type="text" class="form-control" id="password">
-    </div>
-    <div class="mb-3">
-        <button type="submit" class="btn btn-primary">Sign in</button>
-    </div>
-</form>
+{% if user.is_authenticated %}
+    <h3>Welcome {{ user.username }}!</h3>
+{% else %}
+    <h3>Login</h3>
+    <form method="POST" action="/accounts/login/">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="login" id="username">
+        </div>
+        <div class="mb-3">
+            <label for="pass">Password</label>
+            <input type="password" class="form-control" name="password" id="password">
+        </div>
+        <div class="mb-3">
+            <p>
+                <label for="id_remember">Remember Me:</label>
+                <input type="checkbox" name="remember" id="id_remember">
+            </p>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+    </form>
+{% endif %}
