@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+   Salt & Pepper - Homepage
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="alert alert-danger mt-3">Wrong username or password! Login unsuccessful.</div>
+    <div class="row">
+        <div class="col-md-12">
+        {% include 'login.html' %}
+        </div>
+    </div>
+</div>
+{% endblock %}
