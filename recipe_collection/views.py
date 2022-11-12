@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from recipe_collection.models import Recipe
 from recipe_collection.forms import RecipeForm
 
@@ -10,6 +11,12 @@ def home(request):
     }
     return render(request, "home.html", context)
 
+def recipes(request):
+    context = {
+        'recipes': Recipe.objects.all().order_by('-id')
+    }
+    return render(request, "home.html", context)
+
 
 def recipe_details(request, id):
     context = {
@@ -18,6 +25,7 @@ def recipe_details(request, id):
     return render(request, "recipe-details.html", context)
 
 
+@login_required
 def recipe_list(request):
     context = {
         "recipes": Recipe.objects.all(),
@@ -25,7 +33,7 @@ def recipe_list(request):
     }
     return render(request, "recipe-list.html", context)
 
-
+@login_required
 def new_recipe(request):
     recipe_form = RecipeForm(request.POST)
 
@@ -40,7 +48,7 @@ def new_recipe(request):
 
     return render(request, "new-recipe.html", context)
 
-
+@login_required
 def delete_recipe(request, id):
     Recipe.objects.filter(id=id).delete()
     context = {
@@ -49,7 +57,7 @@ def delete_recipe(request, id):
     }
     return render(request, "recipe-list.html", context)
 
-
+@login_required
 def update_recipe(request, id):
     recipe = Recipe.objects.filter(id=id)
 
@@ -60,7 +68,7 @@ def update_recipe(request, id):
     }
     return render(request, "update-recipe.html", context)
 
-
+@login_required
 def edit_recipe(request):
     recipe_form = RecipeForm(request.POST)
 
