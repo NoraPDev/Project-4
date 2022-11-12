@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from main.models import Recipe
-from main.forms import RecipeForm
+from recipe_collection.models import Recipe
+from recipe_collection.forms import RecipeForm
+
 
 # Create your views here.
 def home(request):
@@ -9,11 +10,13 @@ def home(request):
     }
     return render(request, "home.html", context)
 
+
 def recipe_details(request, id):
     context = {
         'recipe': Recipe.objects.get(id=id)
     }
     return render(request, "recipe-details.html", context)
+
 
 def recipe_list(request):
     context = {
@@ -21,6 +24,7 @@ def recipe_list(request):
         "form": RecipeForm()
     }
     return render(request, "recipe-list.html", context)
+
 
 def new_recipe(request):
     recipe_form = RecipeForm(request.POST)
@@ -36,6 +40,7 @@ def new_recipe(request):
 
     return render(request, "new-recipe.html", context)
 
+
 def delete_recipe(request, id):
     Recipe.objects.filter(id=id).delete()
     context = {
@@ -43,6 +48,7 @@ def delete_recipe(request, id):
         "form": RecipeForm()
     }
     return render(request, "recipe-list.html", context)
+
 
 def update_recipe(request, id):
     recipe = Recipe.objects.filter(id=id)
@@ -53,6 +59,7 @@ def update_recipe(request, id):
         "recipe_id": recipe[0].id
     }
     return render(request, "update-recipe.html", context)
+
 
 def edit_recipe(request):
     recipe_form = RecipeForm(request.POST)

@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Recipe(models.Model):
     name = models.TextField()
     photo = models.TextField()
@@ -9,5 +10,6 @@ class Recipe(models.Model):
     ideal_for = models.TextField()
     preparation_time = models.TextField()
     ingredients = models.TextField()
+
     def __str__(self):
         return self.name

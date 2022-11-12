@@ -1,7 +1,7 @@
-"""salt_and_pepper URL Configuration
+"""salt_and_pepper_v2 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,16 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from main.views import home, recipe_details, recipe_list, new_recipe, delete_recipe, update_recipe, edit_recipe
+import recipe_collection.views as Views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('recipe-details/<int:id>/', recipe_details),
-    path('delete-recipe/<int:id>/', delete_recipe),
-    path('update-recipe/<int:id>/', update_recipe),
-    path('edit-recipe/', edit_recipe),
-    path('recipe-list/', recipe_list),
-    path('stored-recipe/', new_recipe),
+    path('recipe-details/<int:id>/', Views.recipe_details),
+    path('delete-recipe/<int:id>/', Views.delete_recipe),
+    path('update-recipe/<int:id>/', Views.update_recipe),
+    path('edit-recipe/', Views.edit_recipe),
+    path('recipe-list/', Views.recipe_list),
+    path('stored-recipe/', Views.new_recipe),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('', home)
+    path('', Views.home)
 ]
