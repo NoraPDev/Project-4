@@ -28,7 +28,7 @@ def recipe_details(request, id):
 @login_required
 def recipe_list(request):
     context = {
-        "recipes": Recipe.objects.all(),
+        "recipes": Recipe.objects.filter(created_by=request.user.id),
         "form": RecipeForm()
     }
     return render(request, "recipe-list.html", context)
@@ -40,6 +40,7 @@ def new_recipe(request):
     form_valid = recipe_form.is_valid()
 
     if form_valid:
+        recipe_form.created_by = request.user
         recipe_form.save()
 
     context = {
