@@ -33,6 +33,12 @@ def recipe_list(request):
     }
     return render(request, "recipe-list.html", context)
 
+def new_recipe_form(request):
+    context = {
+        "form": RecipeForm()
+    }
+    return render(request, "new-recipe-form.html", context)
+
 @login_required
 def new_recipe(request):
     recipe_form = RecipeForm(request.POST)
@@ -40,6 +46,7 @@ def new_recipe(request):
     form_valid = recipe_form.is_valid()
 
     if form_valid:
+        recipe_form = recipe_form.save(commit=False)
         recipe_form.created_by = request.user
         recipe_form.save()
 
@@ -53,7 +60,7 @@ def new_recipe(request):
 def delete_recipe(request, id):
     Recipe.objects.filter(id=id).delete()
     context = {
-        "recipes": Recipe.objects.all(),
+        "recipes": Recipe.objects.filter(created_by=request.user.id),
         "form": RecipeForm()
     }
     return render(request, "recipe-list.html", context)
