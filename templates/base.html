@@ -32,6 +32,10 @@
                 <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="{% url 'account_signup' %}">Registration</a>
                 </li>
+              {% else %}
+                <li class="nav-item">
+                  <a href="{% url 'profile_page' %}" aria-current="page" class="nav-link">Profile</a>
+                </li>
               {% endif %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'recipes' %}">Recipes</a>
