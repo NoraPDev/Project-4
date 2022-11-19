@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container">
   <div class="row">
     <div class="col-md-12">
       {% include 'login.html' %}
@@ -23,7 +23,7 @@
       <div class="col-lg-4">
 
         <div class="card mb-3 ">
-          <img src="{{ recipe.photo }}" class="card-img-top" alt="Tom yum kung">
+          <img src="{{ recipe.photo }}" class="card-img-top" alt="{{ recipe.name }}">
           <div class="card-body">
             <h5 class="card-title">{{ recipe.name }}</h5>
             <p class="card-text">
