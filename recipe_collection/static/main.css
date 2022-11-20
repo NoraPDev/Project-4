@@ -8,6 +8,11 @@ ul {
     margin: 0px;
 }
 
+.navbar-nav :hover {
+    background-color: #d1e3ba;
+    -moz-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px;
+}
+
 .sp-mini-logo {
     width: 30px;
 }
@@ -20,6 +25,10 @@ ul {
     background-color: #f4f4f4;
     padding-left: 30px;
     padding-right: 30px;
+}
+
+.col-md-12 {
+    text-align: center;
 }
 
 .background-cover-box {
