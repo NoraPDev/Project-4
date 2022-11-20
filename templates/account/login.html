@@ -5,12 +5,14 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="alert alert-danger mt-3">Wrong username or password! Login unsuccessful.</div>
-    <div class="row">
-        <div class="col-md-12">
-        {% include 'login.html' %}
+<div class="row bg-green-apple">
+    {% for key, value in form.errors.items %}
+        <div class="alert alert-danger mt-3">
+            {% if key != '__all__' %}{{ key }} {% endif %}{{ value }}
         </div>
+    {% endfor %}
+    <div class="col-md-12">
+        {% include 'login.html' %}
     </div>
 </div>
 {% endblock %}
