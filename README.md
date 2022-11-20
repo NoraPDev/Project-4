@@ -37,79 +37,67 @@ The initial idea of the website was created in Balsamiq, to help me guide throug
 As the website became more and more visually attractive, it was clear that some features were missing, therefore I had to make some additional implementations, for it to be user friendly and better from a sales perspectives.
 
 Links
-* [Home](assets/photos/home.png)
-* [Services](assets/photos/services.png)
-* [References](assets/photos/references.png)
+* [Home](recipe_collection/static/wireframe1.jpg)
+* [Login](assets/photos/services.png)
+* [Registration](assets/photos/references.png)
+* [Recipes](assets/photos/contactus.png)
 * [Contact Us](assets/photos/contactus.png)
 
 ### **Colour Scheme and Font Choice**
-Initially I chose the colors to be true to the main welcome picture using only my own eyes as a judge, however later on I used the below colour scheme to help with the right contrasts and shades. 
-In my opinion this color being a pastel colour scheme is not too aggressive for a user, therefore it is comfortable on the eyes. 
+In the beginning, I determined the colours just by looking at the main picture on the welcome photo. Later, though, I used the colour scheme below to help with the proper contrasts and tints.
+Being a pastel tint, this shade is not, in my opinion, very strong for a user, making it easy on the eyes.
 I wanted the website to be easily readable and color blind friendly as well.
 
  * Colour scheme used
- ![color scheme](assets/photos/color-scheme.png)
+ ![color scheme](recipe_collection/static/color_scheme.jpg)
 
- I have chosen Poppins font from Google Fonts as I believe is it a clean and readable font type, even with a colourful background or hover effect.
+ I have chosen Roboto font from Google Fonts as I believe is it a clean and readable font type, even with a colourful background or hover effect.
 
 ## **Features Common to all Pages**
-### **Welcome Image**
-
-![Welcome Image](assets/photos/IMG_4523.jpg)
-* A photo of a kitchen with nice pastel colours to be easy on the eyes and also catch attention, it determines the colour scheme for the whole website
-
 ### **Navigation Bar**
 
 ![Nav Bar](assets/photos/navbar.png)
- * Located at the top, always visible throughout the whole surfing experience to be able to quickly change between pages
- * A hover effect is implemented to the links to highlight where we are, but also to be a little eyecatching
- * Created the navbar to be sticky, always be on top, so the customer can always have it handy
+ * Located at the top.
+ * A hover effect is implemented to the links to highlight where we are, but also to be a little eyecatching.
+ * In mobile view the navbar changes into a hamburger icon as a dropdown menu.
 
  ### **Footer**
 
 ![Footer](assets/photos/footer.png)
  * Located at the bottom of the page
- * The colour of the footer is completely inline with the colour of the website, so it is not taking away the user's attention to much, but the icons are very much distinvtive and clearly showing where the link will take us
+ * The colour of the footer blends seamlessly with the colour of the website, so it doesn't draw too much attention from the user, but the icons are extremely recognisable and clearly indicate where the link will take us.
  * The footer has links to Facebook, Instagram, Twitter and YouTube pages
 
  ## **Features on Individual Pages**
- ### **Welcome**
- ![Welcome Image with text](assets/photos/welcome.png)
+ ### **Welcome/Home**
+
+![Welcome Image with text](assets/photos/IMG_4523.jpg)
+* A colourful picture of different ingredients, to get the foodie buzz and motivation to come up with wonderful recipes for all the users across the world. Tried to use something that can get users' attention, with a catchy phrase as well. This image determines the colour scheme for the whole website.
 * This section welcomes the user to the website with a brief overview about the content
 
-### **Home**
-![Home-About Us](assets/photos/home-colour.png)
+### **Login**
+![Login/Profile](assets/photos/home-colour.png)
 
- * The Home section is created to introduce the purpose of the joinery website. 
- * The user can see the benefits of chosing ApplePie Joinery, also the distinctions that make this joinery company unique.
- * Each unique skill has its own cardbox section with a relevant icon at the background, to be more catchy.
- * Every cardbox section has a button at the bottom as well, which takes theh user to the Contact Us page immediately, so if the user decide at this stage to get a quote, it is possible straight away.
+ * The Login section is created for the users to be able to login, if they are already registered.
+ * The user can click on Remember Me option, so next time they don't have to type in the details.
+ * Once logged in, pages goes to Profile section and the already uploaded recipe list shows up with EDIT and DELETE options.
+ * Also once logged in, New Recipe button shows up to be able to add new ideas to the profile.
 
  ### **Services**
-![Services](assets/photos/services-colour.png)
- * The Services section is created to show the strengths of ApplePie Joinery, to help users see if this is the company they are looking for
- * There are some reference photos included at this section already along with the text content.
-
-### **References**
-![References](assets/photos/references-colour.png)
-* This section has photos of some of the joinery's recent works
-* The reference section has the most value probably, as this is how the company can show exactly what they are capable of, therefore the customer can decide whether or not this is for them
+![Registration](assets/photos/services-colour.png)
+ * The Registration section is created for users to be able to register a profile on the website.
+ * Once registered, page goes to Profile section and user can start their journey with uploading, editing and deleting.
 
 ### **Contact Us**
-![Contact Us](assets/photos/contact-us.png)
-* This section is the most important section on the website, as the customer can make contact and business can happen.
+![Contact Us](assets/photos/references-colour.png)
+* This section is where the user can make contact, if there are any issues.
 * It is possible to send a message, but also to use the other contact details there, eg: to make a phone call during the mentioned opening hours.
-* After testing, I have decided to re-design the contact page, so the final version is below
-
-![Contact Us](assets/photos/contactus-new.png)
 
 ## **Future Features to be Added**
-The website still needs some improvements and additional features:
-* A login page, with an additional database to store the quotes for customers, so regular customers can keep track of their requests
-* Video chat function
-* An affiliate links page to any subcontractor, raw material supplier
-* Customer review section
-* Booking appointments with the joiner
+The website still needs some improvements and additional features, due to lack of time I could not add below just yet:
+* Comment section to each recipes
+* Like button app to each recipes
+* Proper contact us
 
 ## **Testing**
 
@@ -160,21 +148,51 @@ I have found a couple of errors during developing the site, for example:
 
 ## **Technology Used**
 
-![html-css](assets/photos/logo.jpeg)
+![html-css-js](recipe_collection/static/logo-html-css-js.png)
 
-I have used HTML5 and CSS3 to build this website. 
+- [HTML5](https://en.wikipedia.org/wiki/JavaScript)
+     - Used to add content and structure to the website
+- [CSS3](https://en.wikipedia.org/wiki/JavaScript)
+     - Used to add style to the content
 
-**HTML5**
-Used to add content and structure to the website
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript "Link to JavaScript Wiki")
+     - Used to implement
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Link to Python Wiki")
+     - Used to implement Django functionality, including building models, forms and views for the app.
 
-**CSS3** 
-Used to add style to the content
+<img src="recipe_collection/static/python_logo.png" alt="drawing" height ="80" width="80"/>
+<br>
+
+**Frameworks, Libraries**
+- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/ "Link to Bootstrap page")
+     - Bootstrap was used to help with the styling and responsiveness of the site, using bootstrap classes.
+- [Django](https://www.djangoproject.com/ "Link to Django Project website")
+    - Django was used to build the models, forms and views of the app.
+- [Cloudinary](https://cloudinary.com/ "Link to Cloudinary page")
+     - Cloudinary was used so users can upload pictures to a free cloud storage for their own recipes.
+
 
 ## **Credits**
 
 ### **Content**
-* The text was mainly formed by me and the real joinery friend of mine, Tibor Bari, but also used a few technical terms and ideas from the sites below:
+* Some additional help I used from below websites:
 
-    *[Russian joinery company specialised in kitchens](https://www.tvoytseh.ru)
+    * [Google Fonts](https://fonts.google.com) - font througout the website
     
-    *[Barr Joinery](https://www.barrjoinery.co.uk)
+    * [Font Awesome](https://fontawesome.com/) - to import icons like social media and recipe attribute icons
+
+    * [Am I Responsive?](http://ami.responsivedesign.is/) - to be able to check resposiveness of the site and at the end get a mock up photo in the readme file
+
+    * [Balsamiq Wireframes](https://balsamiq.com/learn/articles/what-are-wireframes) - to create the wireframes for the project
+
+    * [Coolors](https://coolors.co/) - to get the matching colours with the background image and create a palette
+
+    * [iStock Photo](https://www.istockphoto.com/) - to get main image
+
+    * [The Seasoned Plate](http://cdn.shopify.com/s/files/1/0532/7038/0740/files/Seasoned_Plate_Logo_FINAL_Social_Media_TransparentBG_2000x2000_a9dd370b-8527-44b0-8d07-5683c3e9abc8_1200x1200.png?v=1613582314) - S&P logo
+
+### **Thanks**
+* I would like to say thank you to my mentor, Richard Wells, who supported me throughout this project very patiently.
+* I also would like to thank you to my tutor, Mano Mark Molnar, for his help and support.
+     
+
