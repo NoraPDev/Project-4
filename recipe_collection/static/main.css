@@ -1,3 +1,49 @@
+body {
+    background-image: url('/static/background.jpg');
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+ul {
+    margin: 0px;
+}
+
+.sp-mini-logo {
+    width: 30px;
+}
+
+.bg-green-apple {
+    background-color: #e8f0de !important;
+}
+
+.row {
+    background-color: #f4f4f4;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.background-cover-box {
+    height: 200px;
+}
+
+.sp-logo {
+    width: 50px;
+}
+
+/*.nav-link {
+    font-size: 20px !important;
+}*/
+
+#background-cover-box-title {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 100px !important;
+    text-align: center;
+    padding: 15px;
+    /*font-family: 'Roboto';*/
+}
+
 .card-icon-container {
     width: 33.3%;
     float: left;
