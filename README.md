@@ -1,0 +1,180 @@
+# **Salt &#38; Pepper**
+
+![Responsive Design](assets/photos/Screenshot%202022-04-12%20at%2013.20.19.png)
+
+Salt & Pepper is a recipe collector website that is designed for users who are looking for a recipe database, where they can upload, edit and share their own ideas of recipes with the world.
+The goal is to be able to create a user profile, where the user can manage their own little database (add, edit and delete) with their own food ideas with pictures, preparation guides, ingredients, difficulty levels, prep time, etc. and create the most enjoyable user experience while surfing on the website. Helping users to have an easy experience from uploading to sharing, while make it easy even for the users who are not the most familiar with computer use. 
+
+You can view the live site here - <a href="https://norapdev.github.io/ApplePieJoinery/" target="_blank" rel="noopener">Salt &#38; Pepper</a>
+
+## Table of contents
+1. [**Planning Stage**](#planning-stage)
+1. [**Features Common to all Pages**](#features-common-to-all-pages)
+1. [**Features on Individual Pages**](#features-on-individual-pages)
+1. [**Future Features to be Added**](#future-features-to-be-added)
+1. [**Testing**](#testing)
+1. [**Deployment**](#deployment)
+1. [**Bugs**](#bugs)
+1. [**Technology Used**](#technology-used)
+1. [**Credits**](#credits)
+
+## **Planning Stage**
+
+To have a clear sense of what is required here, I first had to decide what elements should be included in this project, what a user would like to see on a website like this. So I started with the user stories, then along with this I have created the wirefames and spent time on time planning as well.
+After all this has been done, I then began the developing phase. I made the choice to begin with the backend side of things, to get those components up and operating before concentrating on the design. 
+
+### **User Stories**
+* As a user, I want to see a pure and clean site with a design that is comfortable to look at.
+* As a user, I want to be able learn about the purpose of the website, so I know how to start using it.
+* As a user, I want to be able to create a user profile, where I can have my own database of recipes.
+* As a user, I want to be able to see all recipes from all users on the main page, with a short description, difficulty and a photo, so I can decide what to cook.
+* As a user, I want to be able to upload, edit and delete my own recipes to my own profile.
+* As a user, I want to be able to click on a recipe so that I can view it in full details.
+* As a user, I want to be able to log in and out, so I can interact with the site.
+
+### **Wireframe**
+The initial idea of the website was created in Balsamiq, to help me guide through the building stage as the different features have been added. 
+As the website became more and more visually attractive, it was clear that some features were missing, therefore I had to make some additional implementations, for it to be user friendly and better from a sales perspectives.
+
+Links
+* [Home](assets/photos/home.png)
+* [Services](assets/photos/services.png)
+* [References](assets/photos/references.png)
+* [Contact Us](assets/photos/contactus.png)
+
+### **Colour Scheme and Font Choice**
+Initially I chose the colors to be true to the main welcome picture using only my own eyes as a judge, however later on I used the below colour scheme to help with the right contrasts and shades. 
+In my opinion this color being a pastel colour scheme is not too aggressive for a user, therefore it is comfortable on the eyes. 
+I wanted the website to be easily readable and color blind friendly as well.
+
+ * Colour scheme used
+ ![color scheme](assets/photos/color-scheme.png)
+
+ I have chosen Poppins font from Google Fonts as I believe is it a clean and readable font type, even with a colourful background or hover effect.
+
+## **Features Common to all Pages**
+### **Welcome Image**
+
+![Welcome Image](assets/photos/IMG_4523.jpg)
+* A photo of a kitchen with nice pastel colours to be easy on the eyes and also catch attention, it determines the colour scheme for the whole website
+
+### **Navigation Bar**
+
+![Nav Bar](assets/photos/navbar.png)
+ * Located at the top, always visible throughout the whole surfing experience to be able to quickly change between pages
+ * A hover effect is implemented to the links to highlight where we are, but also to be a little eyecatching
+ * Created the navbar to be sticky, always be on top, so the customer can always have it handy
+
+ ### **Footer**
+
+![Footer](assets/photos/footer.png)
+ * Located at the bottom of the page
+ * The colour of the footer is completely inline with the colour of the website, so it is not taking away the user's attention to much, but the icons are very much distinvtive and clearly showing where the link will take us
+ * The footer has links to Facebook, Instagram, Twitter and YouTube pages
+
+ ## **Features on Individual Pages**
+ ### **Welcome**
+ ![Welcome Image with text](assets/photos/welcome.png)
+* This section welcomes the user to the website with a brief overview about the content
+
+### **Home**
+![Home-About Us](assets/photos/home-colour.png)
+
+ * The Home section is created to introduce the purpose of the joinery website. 
+ * The user can see the benefits of chosing ApplePie Joinery, also the distinctions that make this joinery company unique.
+ * Each unique skill has its own cardbox section with a relevant icon at the background, to be more catchy.
+ * Every cardbox section has a button at the bottom as well, which takes theh user to the Contact Us page immediately, so if the user decide at this stage to get a quote, it is possible straight away.
+
+ ### **Services**
+![Services](assets/photos/services-colour.png)
+ * The Services section is created to show the strengths of ApplePie Joinery, to help users see if this is the company they are looking for
+ * There are some reference photos included at this section already along with the text content.
+
+### **References**
+![References](assets/photos/references-colour.png)
+* This section has photos of some of the joinery's recent works
+* The reference section has the most value probably, as this is how the company can show exactly what they are capable of, therefore the customer can decide whether or not this is for them
+
+### **Contact Us**
+![Contact Us](assets/photos/contact-us.png)
+* This section is the most important section on the website, as the customer can make contact and business can happen.
+* It is possible to send a message, but also to use the other contact details there, eg: to make a phone call during the mentioned opening hours.
+* After testing, I have decided to re-design the contact page, so the final version is below
+
+![Contact Us](assets/photos/contactus-new.png)
+
+## **Future Features to be Added**
+The website still needs some improvements and additional features:
+* A login page, with an additional database to store the quotes for customers, so regular customers can keep track of their requests
+* Video chat function
+* An affiliate links page to any subcontractor, raw material supplier
+* Customer review section
+* Booking appointments with the joiner
+
+## **Testing**
+
+### **Code Validation**
+
+* I have tested the website on a number of browsers and devices both manually and using the tools below.
+The codes are all validated by [W3C HTML Validator](https://validator.w3.org/) and [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). A minor warning and errors were found on the index.html when tested, but I have managed to fix them immeditately.<br /><br />
+[![Valid CSS!](https://jigsaw.w3.org/css-validator/images/vcss)](https://jigsaw.w3.org/css-validator/check/referer)
+
+### **Lighthouse Testing**
+
+![Lighthouse Report](assets/photos/lighthouse.png)
+
+### **Site Contrast Testing**
+
+#### **WCAG Report**
+
+* I have tested the site with [WCAG](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf?hl=en) for any color blindness issues or contrast issues. The test is showing one contrast issue with the contact buttons on the cardboxes.
+
+## **Deployment**
+I have followed the steps below for deployment:
+
+1. Find the correct repository on GitHub
+1. On the repository site, click on **Settings**
+1. There is a menu on the left, click on **Pages**
+1. Under the source section, change the **Branch** type to **main** and then click **Save**
+1. The section above will indicate that the site is ready to be published and then it will change to **published**.
+![published](assets/photos/deployment.png)
+
+## **Bugs**
+I have found a couple of errors during developing the site, for example:
+
+1.
+* Problem :lady_beetle: : When pressed **Send message** button, it produces an error.
+* Cause :hammer_and_wrench: : There was no action given to the form in the **Contact Us** section. 
+* Resolution :white_check_mark: : Gave "https://formdump.codeinstitute.net/", as per Love Running.
+
+2.
+* Problem :lady_beetle: : Images in the **OurServices** section were not aligned properly, some were different size and could not do a symmetric grid.
+* Cause :hammer_and_wrench: : As it turned out, some of the images were actually different sizes, so I have amended them.
+* Resolution :white_check_mark: : All photos are now symmetric and I have also changed it to display: flex, as it was more suitable in this case.
+
+3.
+* Problem :lady_beetle: : Initially the **Contact us** section with the map was underneath each other, even though I wanted them next to each other 
+* Cause :hammer_and_wrench: : Diplay was on grid
+* Resolution :white_check_mark: : I have changed display to flex and now they look good.
+
+
+## **Technology Used**
+
+![html-css](assets/photos/logo.jpeg)
+
+I have used HTML5 and CSS3 to build this website. 
+
+**HTML5**
+Used to add content and structure to the website
+
+**CSS3** 
+Used to add style to the content
+
+## **Credits**
+
+### **Content**
+* The text was mainly formed by me and the real joinery friend of mine, Tibor Bari, but also used a few technical terms and ideas from the sites below:
+
+    *[Russian joinery company specialised in kitchens](https://www.tvoytseh.ru)
+    
+    *[Barr Joinery](https://www.barrjoinery.co.uk)
