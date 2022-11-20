@@ -5,20 +5,27 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="row">
+  <div class="background-cover-box">
+    <div id="background-cover-box-title" class="rounded">
+      <h1>Salt &#38; Pepper</h1>
+      Explore the foodie in you.
+    </div>
+  </div>
+  <div class="row bg-green-apple">
     <div class="col-md-12">
-      {% include 'login.html' %}
+      <h1>Welcome to the world of recipes!</h1>
+      This is your platform where you can upload and share your recipes. Please <a href="#">register</a> or if you already registered, you can <a href="{% url 'account_signup' %}">login</a>.
+
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm-12" >
+  <div class="row bg-green-apple">
+    <div class="col-sm-12 mt-2" >
       <h3>Recipes of the day</h3>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row bg-green-apple">
     {% for recipe in recipes %}
       <div class="col-lg-4">
 
@@ -36,12 +43,18 @@
             <div class="clearfix-div"></div> 
             
             
-            <a href="/recipe-details/{{ recipe.id }}" class="btn btn-primary mt-3">More details</a>
+            <a href="/recipe-details/{{ recipe.id }}" class="btn btn-warning mt-3">More details</a>
           </div>
         </div>
 
       </div>
     {% endfor %}
   </div>
-</div>
+  <div class="row text-center bg-green-apple">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <a href="{% url 'recipes' %}" class="btn btn-warning btn-lg">All recipes</a>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
 {% endblock %}
