@@ -4,10 +4,12 @@
    Salt & Pepper - Recipe details
 {% endblock %}
 
-{% block content %}
-<div class="container-fluid">
+{% block 'body-class' %}bg-green-apple no-bg-img{% endblock %}
 
-    <div class="row">
+{% block 'footer-style' %}sp-footer{% endblock %}
+
+{% block content %}
+    <div class="row bg-green-apple">
       <div class="col-sm-1">
 
       </div>
@@ -27,6 +29,4 @@
       </div>
       <div class="col-sm-1"></div>
     </div>
-
-</div>
 {% endblock %}

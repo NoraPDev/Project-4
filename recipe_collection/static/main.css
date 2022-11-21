@@ -8,9 +8,15 @@ ul {
     margin: 0px;
 }
 
+.no-bg-img {
+    background-image: none !important;
+}
+
 .navbar-nav :hover {
     background-color: #d1e3ba;
-    -moz-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px;
+    -moz-border-radius: 15px; 
+    -webkit-border-radius: 15px; 
+    border-radius: 15px;
 }
 
 .sp-mini-logo {
@@ -74,9 +80,6 @@ ul {
     border-radius: 20px;
   }
   
-.btn :hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-  }
 
 .details-cover-img {
     height: 400px;
@@ -84,4 +87,23 @@ ul {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.sp-footer {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+}
+
+.sp-footer div.row {
+    margin: 0px;
+}
+
+.footer-icon {
+    color: #000;
+}
+
+.footer-icon:hover {
+    color: #000;
 }

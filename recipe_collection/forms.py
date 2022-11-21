@@ -15,3 +15,13 @@ class RecipeForm(forms.ModelForm):
           'preparation_time',
           'ingredients'
         ]
+        widgets = {
+          'name': forms.TextInput(attrs={'class': 'form-control w-50'}),
+          'photo': forms.TextInput(attrs={'class': 'form-control w-50'}),
+          'short_description': forms.TextInput(attrs={'class': 'form-control w-50'}),
+          'preparation_guide': forms.TextInput(attrs={'class': 'form-control w-50'}),
+          'difficulty': forms.TextInput(attrs={'class': 'form-control w-50'}),
+          'ideal_for': forms.TextInput(attrs={'class': 'form-control w-50'}),
+          'preparation_time': forms.TextInput(attrs={'class': 'form-control w-50'}),
+          'ingredients': forms.TextInput(attrs={'class': 'form-control w-50'})
+        }

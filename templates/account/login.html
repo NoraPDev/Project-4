@@ -4,6 +4,10 @@
    Salt & Pepper - Homepage
 {% endblock %}
 
+{% block 'body-class' %}bg-green-apple no-bg-img{% endblock %}
+
+{% block 'footer-style' %}sp-footer{% endblock %}
+
 {% block content %}
 <div class="row bg-green-apple">
     {% for key, value in form.errors.items %}
