@@ -1,9 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 class Recipe(models.Model):
     name = models.CharField(max_length=255)
-    photo = models.CharField(max_length=255)
+    photo_cloudinary = CloudinaryField('image')
     short_description = models.TextField(default="")
     preparation_guide = models.TextField()
     difficulty = models.CharField(max_length=255)
