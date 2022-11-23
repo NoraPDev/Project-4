@@ -4,15 +4,19 @@
    Salt & Pepper - Homepage
 {% endblock %}
 
+{% block 'body-class' %}bg-green-apple no-bg-img{% endblock %}
+
+{% block 'footer-style' %}{% if form.errors.items|length < 1 %}sp-footer{% endif %}{% endblock %}
+
+
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
+    <div class="row bg-green-apple">
         <div class="col-md-12">
-            <ul class="errorlist">
                 {% for key, value in form.errors.items %}
-                    <li>{% if key != '__all__' %}{{ key }} {% endif %}{{ value }}</li>
+                    <div class="alert alert-danger mt-3">
+                        {% if key != '__all__' %}{{ key }} {% endif %}{{ value }}
+                    </div>
                 {% endfor %}
-            </ul>
                 
             <form class="signup" id="signup_form" method="post" action="/accounts/signup/">
                 {% csrf_token %}
@@ -27,10 +31,9 @@
                 <p><label for="id_password1">Password:</label> <input type="password" name="password1" placeholder="Password" autocomplete="new-password" required="" id="id_password1"></p>
                 <p><label for="id_password2">Password (again):</label> <input type="password" name="password2" placeholder="Password (again)" autocomplete="new-password" required="" id="id_password2"></p>
                 
-                <button type="submit">Sign Up »</button>
+                <button type="submit" class="btn btn-warning">Sign Up »</button>
             </form>
 
         </div>
     </div>
-</div>
 {% endblock %}
