@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from recipe_collection.models import Recipe
 from recipe_collection.forms import RecipeForm
+from cloudinary.forms import cl_init_js_callbacks
 
 
 # Create your views here.
@@ -11,11 +12,15 @@ def home(request):
     }
     return render(request, "home.html", context)
 
+
+def contact_us(request):
+    return render(request, "contact-us.html", {})
+
 def recipes(request):
     context = {
         'recipes': Recipe.objects.all().order_by('-id')
     }
-    return render(request, "home.html", context)
+    return render(request, "all-recipes.html", context)
 
 
 def recipe_details(request, id):
@@ -33,6 +38,7 @@ def recipe_list(request):
     }
     return render(request, "recipe-list.html", context)
 
+@login_required
 def new_recipe_form(request):
     context = {
         "form": RecipeForm()
@@ -41,7 +47,7 @@ def new_recipe_form(request):
 
 @login_required
 def new_recipe(request):
-    recipe_form = RecipeForm(request.POST)
+    recipe_form = RecipeForm(request.POST, request.FILES)
 
     form_valid = recipe_form.is_valid()
 
@@ -78,22 +84,21 @@ def update_recipe(request, id):
 
 @login_required
 def edit_recipe(request):
-    recipe_form = RecipeForm(request.POST)
-
-    print(request.POST)
+    recipe_form = RecipeForm(request.POST, request.FILES)
+    Recipe.objects.filter(id=request.POST["id"]).delete()
 
     form_valid = recipe_form.is_valid()
 
     if form_valid:
-        recipe= Recipe.objects.get(id=request.POST["id"])
-        recipe.name = request.POST["name"]
-        recipe.photo = request.POST["photo"]
-        recipe.short_description = request.POST["short_description"]
-        recipe.preparation_guide = request.POST["preparation_guide"]
-        recipe.difficulty = request.POST["difficulty"]
-        recipe.ideal_for = request.POST["ideal_for"]
-        recipe.preparation_time = request.POST["preparation_time"]
-        recipe.ingredients = request.POST["ingredients"]
-        recipe.save()
+        # recipe= Recipe.objects.get(id=request.POST["id"])
+        # recipe.name = request.POST["name"]
+        # recipe.photo = request.POST["photo"]
+        # recipe.short_description = request.POST["short_description"]
+        # recipe.preparation_guide = request.POST["preparation_guide"]
+        # recipe.difficulty = request.POST["difficulty"]
+        # recipe.ideal_for = request.POST["ideal_for"]
+        # recipe.preparation_time = request.POST["preparation_time"]
+        # recipe.ingredients = request.POST["ingredients"]
+        recipe_form.save()
 
     return render(request, "edit-recipe.html", { "form_valid": form_valid })

@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from pathlib import Path
 import os
 
@@ -48,7 +51,15 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    # cloudinary
+    'cloudinary',
 ]
+
+cloudinary.config( 
+  cloud_name = "dcrljjrap", 
+  api_key = "199969312362556", 
+  api_secret = "I3LaigN1A5MCDHY53bElMgQDEEw" 
+)
 
 # django-allauth
 SITE_ID = 1

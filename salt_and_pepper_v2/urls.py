@@ -20,6 +20,7 @@ import recipe_collection.views as Views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('recipes/', Views.recipes, name="recipes"),
+    path('contact-us/', Views.contact_us, name="contact-us"),
     path('recipe-details/<int:id>/', Views.recipe_details, name="recipe_details"),
     path('delete-recipe/<int:id>/', Views.delete_recipe, name="delete_recipe"),
     path('update-recipe/<int:id>/', Views.update_recipe, name="update_recipe_form"),
