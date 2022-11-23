@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
+{% load cloudinary %}
+
+
 {% block title %}
    Salt & Pepper - Recipe details
 {% endblock %}
@@ -12,23 +15,9 @@
     <div class="col-sm-10" >
       <h1>New recipe</h1>
       
-      <form action="/stored-recipe/" method="POST">
+      <form action="/stored-recipe/" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <p><label for="id_name">Name:</label></p> 
-        <p><input type="text" name="name" maxlength="255" required="" id="id_name" class="form-control w-50"></p>
-        <p><label for="id_photo">Photo:</label></p><p><input class="form-control w-50" type="text" name="photo" maxlength="255" required="" id="id_photo"></p>
-        <p><label for="id_short_description">Short description:</label> </p>
-        <p><textarea class="form-control w-50" name="short_description" cols="40" rows="10" required="" id="id_short_description" style="height: 124px;"></textarea></p>
-        <p><label for="id_preparation_guide">Preparation guide:</label> </p>
-        <p><textarea class="form-control w-50" name="preparation_guide" cols="40" rows="10" required="" id="id_preparation_guide"></textarea></p>
-        <p><label for="id_difficulty">Difficulty:</label> </p>
-        <p><input class="form-control w-50" type="text" name="difficulty" maxlength="255" required="" id="id_difficulty"></p>
-        <p><label for="id_ideal_for">Ideal for:</label> </p>
-        <p><input class="form-control w-50" type="text" name="ideal_for" maxlength="255" required="" id="id_ideal_for"></p>
-        <p><label for="id_preparation_time">Preparation time (in minutes):</label> </p>
-        <p><input class="form-control w-50" type="number" name="preparation_time" required="" id="id_preparation_time"></p>
-        <p><label for="id_ingredients">Ingredients:</label> </p>
-        <p><textarea class="form-control w-50" name="ingredients" cols="40" rows="10" maxlength="255" required="" id="id_ingredients"></textarea></p>
+        {{ form.as_p }}
         <input type='submit' class="btn btn-warning" value='Save' />
       </form>
 
