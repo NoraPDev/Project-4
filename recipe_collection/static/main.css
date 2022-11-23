@@ -107,3 +107,7 @@ ul {
 .footer-icon:hover {
     color: #000;
 }
+
+#footer-placeholder {
+    height: 111px;
+}
