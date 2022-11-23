@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}
+   Salt & Pepper - Homepage
+{% endblock %}
+
+{% block content %}
+  <div class="background-cover-box">
+    <div id="background-cover-box-title" class="rounded">
+      <h1>Salt &#38; Pepper</h1>
+      Explore the foodie in you.
+    </div>
+  </div>
+  <div class="row bg-green-apple">
+    <div class="col-md-12">
+      <h1>Welcome to the world of recipes!</h1>
+      This is your platform where you can upload and share your recipes. Please <a href="#">register</a> or if you already registered, you can <a href="{% url 'account_signup' %}">login</a>.
+
+    </div>
+  </div>
+
+  <div class="row bg-green-apple">
+    <div class="col-sm-12 mt-2" >
+      <h3>All recipes</h3>
+    </div>
+  </div>
+
+  <div class="row bg-green-apple">
+    {% for recipe in recipes %}
+      <div class="col-lg-4">
+
+        <div class="card mb-3 ">
+          <img src="{{ recipe.photo }}" class="card-img-top" alt="{{ recipe.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ recipe.name }}</h5>
+            <p class="card-text">
+              {{ recipe.short_description }}
+            </p>
+
+            <div class="card-icon-container"><i class="fa-solid fa-carrot"></i> {{ recipe.ideal_for }}</div> 
+            <div class="card-icon-container"><i class="fa-solid fa-dumbbell"></i> {{ recipe.difficulty }}</div> 
+            <div class="card-icon-container"><i class="fa-regular fa-clock"></i> {{ recipe.preparation_time }} mins</div>
+            <div class="clearfix-div"></div> 
+            
+            
+            <a href="/recipe-details/{{ recipe.id }}" class="btn btn-warning mt-3">More details</a>
+          </div>
+        </div>
+
+      </div>
+    {% endfor %}
+  </div>
+  <div class="row text-center bg-green-apple">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <a href="{% url 'recipes' %}" class="btn btn-warning btn-lg">All recipes</a>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+{% endblock %}
