@@ -18,25 +18,28 @@
         <br />
         <div class="contact-content">
             <div class="enquiry-div">
-                <form action="https://formdump.codeinstitute.net/" method="post" class="message-us">
+                <form action="/contact-us-successful/" method="post" class="message-us">
+                    {% csrf_token %}
                     <div class="message-us-header">
                         <i class="fa-solid fa-envelope-open-text"></i>
                         <h3>Get in touch!</h3>
                     </div>
 
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" class="text-input" placeholder="Name" required>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
                     <br />
                     <label for="email">Email  </label>
-                    <input type="email" id="email" name="email" class="text-input" placeholder="Email" required>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
                     <br />
                     <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" class="text-input" placeholder="Phone" required>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone" required>
                     <br />
                     <label for="message">Send Us A Message</label>
-                    <textarea name="message" id="message" cols="30" rows="10" class="text-area" placeholder="Message"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Message"></textarea>
 
-                    <input type="submit" class="contact-us-button btn btn-warning" value="Send message">
+                    <div class="text-center mb-5 mt-3">
+                        <input type="submit" class="btn btn-warning" value="Send message">
+                    </div>
                 </form>
             </div>
             <div id="contact-details">

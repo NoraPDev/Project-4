@@ -19,8 +19,8 @@
       {% for recipe in recipes %}
         <div>
           {{ recipe.name }} ({{ recipe.id }}) 
-          <a href="/update-recipe/{{ recipe.id }}/">Edit</a> 
-          <a href="/delete-recipe/{{ recipe.id }}/"  onclick="return confirm('Are you sure you want to delete?')">Delete</a>
+          <a class="btn btn-success" href="/update-recipe/{{ recipe.id }}/">Edit</a> 
+          <a class="btn btn-danger" href="/delete-recipe/{{ recipe.id }}/"  onclick="return confirm('Are you sure you want to delete?')">Delete</a>
         </div>
       {% endfor %}
       <hr />

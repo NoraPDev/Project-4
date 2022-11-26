@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'body-class' %}bg-green-apple no-bg-img{% endblock %}
+
+{% block 'footer-style' %}sp-footer{% endblock %}
+
+{% block content %}
+<div class="row bg-green-apple">
+    <div class="col-12 centered">
+        <h1 class="centering"> Four Owwwww Four!</h1>
+
+        <a href="{% url 'recipes' %}" aria-label="view {{ product.name }}">Let's get out of here</a>
+    </div>
+</div>
+
+
+{% endblock %}

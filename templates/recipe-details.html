@@ -14,7 +14,7 @@
       </div>
       <div class="col-sm-10" >
         <h3>{{ recipe.name }}</h3>
-        <div class="w-100 details-cover-img" style="background-image: url('{{ recipe.photo }}');" >
+        <div class="w-100 details-cover-img" style="background-image: url('{{ recipe.photo_cloudinary.url }}');" >
         </div>
         <p>
           {{ recipe.short_description }}

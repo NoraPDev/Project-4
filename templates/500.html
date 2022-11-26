@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'body-class' %}bg-green-apple no-bg-img{% endblock %}
+
+{% block 'footer-style' %}sp-footer{% endblock %}
+
+{% block content %}
+<div class="row bg-green-apple">
+    <div class="col-12 centered">
+        <h1 class="centering">500 - Something went wrong</h1>
+
+        <a href="{% url 'recipes' %}" aria-label="view">Let's get out of here</a>
+    </div>
+</div>
+{% endblock %}
