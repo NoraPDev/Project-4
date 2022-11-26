@@ -3,7 +3,13 @@ from django.contrib.auth.decorators import login_required
 from recipe_collection.models import Recipe
 from recipe_collection.forms import RecipeForm
 from cloudinary.forms import cl_init_js_callbacks
+import cloudinary
 
+def error_404(request, exception):
+    return render(request, "404.html", {})
+
+def error_500(request):
+    return render(request, "500.html", {})
 
 # Create your views here.
 def home(request):
@@ -15,6 +21,9 @@ def home(request):
 
 def contact_us(request):
     return render(request, "contact-us.html", {})
+
+def contact_us_success(request):
+    return render(request, "contact-us-successful.html", {})
 
 def recipes(request):
     context = {
@@ -85,20 +94,21 @@ def update_recipe(request, id):
 @login_required
 def edit_recipe(request):
     recipe_form = RecipeForm(request.POST, request.FILES)
-    Recipe.objects.filter(id=request.POST["id"]).delete()
 
     form_valid = recipe_form.is_valid()
 
     if form_valid:
-        # recipe= Recipe.objects.get(id=request.POST["id"])
-        # recipe.name = request.POST["name"]
-        # recipe.photo = request.POST["photo"]
-        # recipe.short_description = request.POST["short_description"]
-        # recipe.preparation_guide = request.POST["preparation_guide"]
-        # recipe.difficulty = request.POST["difficulty"]
-        # recipe.ideal_for = request.POST["ideal_for"]
-        # recipe.preparation_time = request.POST["preparation_time"]
-        # recipe.ingredients = request.POST["ingredients"]
-        recipe_form.save()
+        recipe= Recipe.objects.get(id=request.POST["id"])
+        if len(request.FILES) > 0:
+            response = cloudinary.uploader.upload(request.FILES['photo_cloudinary'])
+            recipe.photo_cloudinary = response['public_id']
+        recipe.name = request.POST["name"]
+        recipe.short_description = request.POST["short_description"]
+        recipe.preparation_guide = request.POST["preparation_guide"]
+        recipe.difficulty = request.POST["difficulty"]
+        recipe.ideal_for = request.POST["ideal_for"]
+        recipe.preparation_time = request.POST["preparation_time"]
+        recipe.ingredients = request.POST["ingredients"]
+        recipe.save()
 
     return render(request, "edit-recipe.html", { "form_valid": form_valid })

@@ -16,6 +16,16 @@ import cloudinary.api
 from pathlib import Path
 import os
 
+ALLOWED_HOSTS = [
+    "salt-and-pepper-np.herokuapp.com",
+    "127.0.0.1", 
+    "localhost",
+    "*"
+]
+
+from dotenv import load_dotenv
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,16 +34,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6q*7zro-^cvd!o@d&8v4)7s!py+7k*#t0-560#tn$tx+si+&16'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = [
-    "salt-and-pepper-np.herokuapp.com",
-    "127.0.0.1", 
-    "localhost"
-]
 
 
 # Application definition
@@ -56,9 +60,9 @@ INSTALLED_APPS = [
 ]
 
 cloudinary.config( 
-  cloud_name = "dcrljjrap", 
-  api_key = "199969312362556", 
-  api_secret = "I3LaigN1A5MCDHY53bElMgQDEEw" 
+  cloud_name = os.getenv("CLOUDINARY_NAME"),
+  api_key = os.getenv("CLOUDINARY_API_KEY"),
+  api_secret = os.getenv("CLOUDINARY_API_SECRET")
 )
 
 # django-allauth
@@ -110,10 +114,15 @@ WSGI_APPLICATION = 'salt_and_pepper_v2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv("SAP_DB_NAME"),
+        'USER': os.getenv("SAP_DB_USER"),
+        'PASSWORD': os.getenv("SAP_DB_PASSWORD"),
+        'HOST': os.getenv("SAP_DB_HOST"),
+        'PORT': os.getenv("SAP_DB_PORT"),
     }
 }
 
@@ -155,7 +164,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_URL = 'http://saltandpepper.standapp.hu/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import recipe_collection.views as Views
+from django.views.static import serve 
+import salt_and_pepper_v2.settings as settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('recipes/', Views.recipes, name="recipes"),
     path('contact-us/', Views.contact_us, name="contact-us"),
+    path('contact-us-successful/', Views.contact_us_success, name="contact-us-success"),
     path('recipe-details/<int:id>/', Views.recipe_details, name="recipe_details"),
     path('delete-recipe/<int:id>/', Views.delete_recipe, name="delete_recipe"),
     path('update-recipe/<int:id>/', Views.update_recipe, name="update_recipe_form"),
@@ -29,5 +32,10 @@ urlpatterns = [
     path('stored-recipe/', Views.new_recipe, name="new_recipe_process"),
     path('accounts/', include('allauth.urls')),
     path('accounts/profile/', Views.recipe_list, name="profile_page"),
-    path('', Views.home, name="home")
+    path('', Views.home, name="home"),
+    # path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+    # path('', include())
 ]
+
+handler404 = 'recipe_collection.views.error_404'
+handler500 = 'recipe_collection.views.error_500'

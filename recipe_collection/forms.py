@@ -29,3 +29,4 @@ class RecipeForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(RecipeForm, self).__init__(*args, **kwargs)
         self.fields['created_by'].required = False
+        self.fields['photo_cloudinary'].required = False
