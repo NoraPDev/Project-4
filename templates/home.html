@@ -16,7 +16,7 @@
   <div class="row bg-green-apple">
     <div class="col-md-12">
       <h1>Welcome to the world of recipes!</h1>
-      This is your platform where you can upload and share your recipes. Please <a href="#">register</a> or if you already registered, you can <a href="{% url 'account_signup' %}">login</a>.
+      This is your platform where you can upload and share your recipes. Please <a href="{% url 'account_signup' %}">register</a> or if you already registered, you can <a href="{% url 'account_login' %}">login</a>.
 
     </div>
   </div>
@@ -60,7 +60,7 @@
     <div class="col-md-4"></div>
   </div>
 
-  <div class="row d-4k-block d-xl-none d-sm-none d-md-none d-lg-none d-xxl-none sp-footer">
+  <div class="row d-none d-4k-block d-xl-none d-sm-none d-md-none d-lg-none d-xxl-none sp-footer">
     {% include 'footer.html' %}
   </div>
 {% endblock %}
