@@ -37,11 +37,10 @@ The initial idea of the website was created in Balsamiq, to help me guide throug
 As the website became more and more visually attractive, it was clear that some features were missing, therefore I had to make some additional implementations, for it to be user friendly and better from a sales perspectives.
 
 Links
-* [Home](recipe_collection/static/wireframe1.jpg)
-* [Login](assets/photos/services.png)
-* [Registration](assets/photos/references.png)
-* [Recipes](assets/photos/contactus.png)
-* [Contact Us](assets/photos/contactus.png)
+* [Home/Recipes](recipe_collection/static/wireframe1.jpg)
+* [Login](recipe_collection/static/wireframe2.jpg)
+* [Registration](recipe_collection/static/wireframe3.jpg)
+* [Contact Us](recipe_collection/static/wireframe4.jpg)
 
 ### **Colour Scheme and Font Choice**
 In the beginning, I determined the colours just by looking at the main picture on the welcome photo. Later, though, I used the colour scheme below to help with the proper contrasts and tints.
