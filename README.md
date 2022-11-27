@@ -24,12 +24,12 @@ To have a clear sense of what is required here, I first had to decide what eleme
 After all this has been done, I then began the developing phase. I made the choice to begin with the backend side of things, to get those components up and operating before concentrating on the design. 
 
 ### **User Stories**
-* As a user, I want to see a pure and clean site with a design that is comfortable to look at.
-* As a user, I want to be able learn about the purpose of the website, so I know how to start using it.
-* As a user, I want to be able to create a user profile, where I can have my own database of recipes.
-* As a user, I want to be able to see all recipes from all users on the main page, with a short description, difficulty and a photo, so I can decide what to cook.
-* As a user, I want to be able to upload, edit and delete my own recipes to my own profile.
-* As a user, I want to be able to click on a recipe so that I can view it in full details.
+* As a user, I want to see a pure and clean site with a design that is comfortable to look at, so it is easy to navigate on the site.
+* As a user, I want to be able to learn about the purpose of the website, so I know how to start using it.
+* As a user, I want to be able to create a user profile, where I can have my own database of recipes, so that I can interact with the site.
+* As a user, I want to be able to see all recipes from all users on the main page, with a short description, difficulty and a photo, so I can easily decide what to cook.
+* As a user, I want to be able to upload, edit and delete my own recipes to my own profile, so that I can manage the content.
+* As a user, I want to be able to click on a recipe, so that I can view it in full details.
 * As a user, I want to be able to log in and out, so I can interact with the site.
 
 ### **Wireframe**
@@ -104,47 +104,68 @@ The website still needs some improvements and additional features, due to lack o
 ### **Code Validation**
 
 * I have tested the website on a number of browsers and devices both manually and using the tools below.
-The codes are all validated by [W3C HTML Validator](https://validator.w3.org/) and [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). A minor warning and errors were found on the index.html when tested, but I have managed to fix them immeditately.<br /><br />
-[![Valid CSS!](https://jigsaw.w3.org/css-validator/images/vcss)](https://jigsaw.w3.org/css-validator/check/referer)
+The codes are all validated by [W3C HTML Validator](https://validator.w3.org/) and [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). 
+W3C HTML Validator shows Info lines, but no errors or warnings. 
+W3C CSS Validator shows mainly issues with Bootstrap lines, which I have ignored as it is outside of my control. <br /><br />
+
 
 ### **Lighthouse Testing**
 
-![Lighthouse Report](assets/photos/lighthouse.png)
+![Lighthouse Report](recipe_collection/static/lighthouse.jpg)
 
 ### **Site Contrast Testing**
 
 #### **WCAG Report**
 
-* I have tested the site with [WCAG](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf?hl=en) for any color blindness issues or contrast issues. The test is showing one contrast issue with the contact buttons on the cardboxes.
+* I have tested the site with [WCAG](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf?hl=en) for any color blindness issues or contrast issues. The test is showing one contrast issue with the logo in the footer section.
 
 ## **Deployment**
 I have followed the steps below for deployment:
 
-1. Find the correct repository on GitHub
-1. On the repository site, click on **Settings**
-1. There is a menu on the left, click on **Pages**
-1. Under the source section, change the **Branch** type to **main** and then click **Save**
-1. The section above will indicate that the site is ready to be published and then it will change to **published**.
-![published](assets/photos/deployment.png)
+1. Create the Heroku App:
+    - Select "Create new app" in Heroku.
+    - Choose a name for your app and select the location.
+
+2. Attach the Postgres database:
+    - In the Resources tab, under add-ons, type in Postgres and select the Heroku Postgres option (Later changed to ElephantSQL)
+
+3. Prepare the environment and settings.py file:
+    - In the Settings tab, click on Reveal Config Vars and copy the url next to DATABASE_URL.
+    - In your GitPod workspace, create an env.py file in the main directory. 
+    - Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file.
+    - Add the SECRET_KEY value to the Config Vars in Heroku.
+    - Update the settings.py file to import the env file and add the SECRETKEY and DATABASE_URL file paths.
+    - Update the Config Vars with the Cloudinary url, adding into the settings.py file also.
+    - In settings.py add the following sections:
+        - Cloudinary to the INSTALLED_APPS list
+        - STATICFILE_STORAGE
+        - STATICFILES_DIRS
+        - STATIC_ROOT
+        - MEDIA_URL
+        - DEFAULT_FILE_STORAGE
+        - TEMPLATES_DIR
+        - Update DIRS in TEMPLATES with TEMPLATES_DIR
+        - Update ALLOWED_HOSTS with ['app_name.heroku.com', 'localhost']
+
+4. Media files in Cloudinary and Deploy to Heroku:
+    - Create three directories in the main directory; media, static and templates.
+    - Create a file named "Procfile" in the main directory
+    - Log in to Heroku using the terminal heroku login -i.
+    - Then run the following command: **heroku git:remote -a Salt-and-Pepper**. This will link the app to the Gitpod terminal.
+    - After linking your app to your workspace, you can then deploy new versions of the app by running the command **git push heroku main** and your app will be deployed to Heroku.
+
 
 ## **Bugs**
-I have found a couple of errors during developing the site, for example:
+I have found a couple of errors during developing the site, which I have fixed since, but these were for example:
 
 1.
-* Problem :lady_beetle: : When pressed **Send message** button, it produces an error.
-* Cause :hammer_and_wrench: : There was no action given to the form in the **Contact Us** section. 
-* Resolution :white_check_mark: : Gave "https://formdump.codeinstitute.net/", as per Love Running.
+* Problem :lady_beetle: : When tried to edit a recipe, the website deleted and created a new one, instead of changing the existing one, also after editing I got a **Form is not valid** message.
 
 2.
-* Problem :lady_beetle: : Images in the **OurServices** section were not aligned properly, some were different size and could not do a symmetric grid.
-* Cause :hammer_and_wrench: : As it turned out, some of the images were actually different sizes, so I have amended them.
-* Resolution :white_check_mark: : All photos are now symmetric and I have also changed it to display: flex, as it was more suitable in this case.
+* Problem :lady_beetle: : Background image duplicated in 4K resolution. 
 
 3.
-* Problem :lady_beetle: : Initially the **Contact us** section with the map was underneath each other, even though I wanted them next to each other 
-* Cause :hammer_and_wrench: : Diplay was on grid
-* Resolution :white_check_mark: : I have changed display to flex and now they look good.
-
+* Problem :lady_beetle: : When added a new recipe, it didn't appear in the list for user, if you added one more.
 
 ## **Technology Used**
 
@@ -190,6 +211,10 @@ I have found a couple of errors during developing the site, for example:
     * [iStock Photo](https://www.istockphoto.com/) - to get main image
 
     * [The Seasoned Plate](http://cdn.shopify.com/s/files/1/0532/7038/0740/files/Seasoned_Plate_Logo_FINAL_Social_Media_TransparentBG_2000x2000_a9dd370b-8527-44b0-8d07-5683c3e9abc8_1200x1200.png?v=1613582314) - S&P logo
+
+    * [Vegan-a-eat](https://vegan-a-eat.herokuapp.com/) - inspiration
+
+    * [Apple Pie Joinery](https://norapdev.github.io/ApplePieJoinery/) - more inspiration from my first project
 
 ### **Thanks**
 * I would like to say thank you to my mentor, Richard Wells, who supported me throughout this project very patiently.
