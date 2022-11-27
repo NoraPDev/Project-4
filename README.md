@@ -1,11 +1,11 @@
 # **Salt &#38; Pepper**
 
-![Responsive Design](assets/photos/Screenshot%202022-04-12%20at%2013.20.19.png)
+![Responsive Design](recipe_collection/static/responsive.jpg)
 
 Salt & Pepper is a recipe collector website that is designed for users who are looking for a recipe database, where they can upload, edit and share their own ideas of recipes with the world.
 The goal is to be able to create a user profile, where the user can manage their own little database (add, edit and delete) with their own food ideas with pictures, preparation guides, ingredients, difficulty levels, prep time, etc. and create the most enjoyable user experience while surfing on the website. Helping users to have an easy experience from uploading to sharing, while make it easy even for the users who are not the most familiar with computer use. 
 
-You can view the live site here - <a href="https://norapdev.github.io/ApplePieJoinery/" target="_blank" rel="noopener">Salt &#38; Pepper</a>
+You can view the live site here - <a href="https://salt-and-pepper-np.herokuapp.com/" target="_blank" rel="noopener">Salt &#38; Pepper</a>
 
 ## Table of contents
 1. [**Planning Stage**](#planning-stage)
@@ -56,14 +56,14 @@ I wanted the website to be easily readable and color blind friendly as well.
 ## **Features Common to all Pages**
 ### **Navigation Bar**
 
-![Nav Bar](assets/photos/navbar.png)
+![Nav Bar](recipe_collection/static/navbar.jpg)
  * Located at the top.
  * A hover effect is implemented to the links to highlight where we are, but also to be a little eyecatching.
  * In mobile view the navbar changes into a hamburger icon as a dropdown menu.
 
  ### **Footer**
 
-![Footer](assets/photos/footer.png)
+![Footer](recipe_collection/static/footer.jpg)
  * Located at the bottom of the page
  * The colour of the footer blends seamlessly with the colour of the website, so it doesn't draw too much attention from the user, but the icons are extremely recognisable and clearly indicate where the link will take us.
  * The footer has links to Facebook, Instagram, Twitter and YouTube pages
@@ -71,12 +71,12 @@ I wanted the website to be easily readable and color blind friendly as well.
  ## **Features on Individual Pages**
  ### **Welcome/Home**
 
-![Welcome Image with text](assets/photos/IMG_4523.jpg)
+![Welcome Image with text](recipe_collection/static/welcome.jpg)
 * A colourful picture of different ingredients, to get the foodie buzz and motivation to come up with wonderful recipes for all the users across the world. Tried to use something that can get users' attention, with a catchy phrase as well. This image determines the colour scheme for the whole website.
 * This section welcomes the user to the website with a brief overview about the content
 
 ### **Login**
-![Login/Profile](assets/photos/home-colour.png)
+![Login/Profile](recipe_collection/static/login.jpg)
 
  * The Login section is created for the users to be able to login, if they are already registered.
  * The user can click on Remember Me option, so next time they don't have to type in the details.
@@ -84,12 +84,12 @@ I wanted the website to be easily readable and color blind friendly as well.
  * Also once logged in, New Recipe button shows up to be able to add new ideas to the profile.
 
  ### **Services**
-![Registration](assets/photos/services-colour.png)
+![Registration](recipe_collection/static/registration.jpg)
  * The Registration section is created for users to be able to register a profile on the website.
  * Once registered, page goes to Profile section and user can start their journey with uploading, editing and deleting.
 
 ### **Contact Us**
-![Contact Us](assets/photos/references-colour.png)
+![Contact Us](recipe_collection/static/contact.jpg)
 * This section is where the user can make contact, if there are any issues.
 * It is possible to send a message, but also to use the other contact details there, eg: to make a phone call during the mentioned opening hours.
 
