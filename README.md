@@ -23,6 +23,8 @@ You can view the live site here - <a href="https://salt-and-pepper-np.herokuapp.
 To have a clear sense of what is required here, I first had to decide what elements should be included in this project, what a user would like to see on a website like this. So I started with the user stories, then along with this I have created the wirefames and spent time on time planning as well.
 After all this has been done, I then began the developing phase. I made the choice to begin with the backend side of things, to get those components up and operating before concentrating on the design. 
 
+You can find the agile method to my user stories on my github repo just click [here](https://github.com/users/NoraPDev/projects/2)
+
 ### **User Stories**
 * As a user, I want to see a pure and clean site with a design that is comfortable to look at, so it is easy to navigate on the site.
 * As a user, I want to be able to learn about the purpose of the website, so I know how to start using it.
@@ -96,7 +98,7 @@ I wanted the website to be easily readable and color blind friendly as well.
 The website still needs some improvements and additional features, due to lack of time I could not add below just yet:
 * Comment section to each recipes
 * Like button app to each recipes
-* Proper contact us
+* Properly functioning contact us
 
 ## **Testing**
 
@@ -118,6 +120,78 @@ W3C CSS Validator shows mainly issues with Bootstrap lines, which I have ignored
 
 * I have tested the site with [WCAG](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf?hl=en) for any color blindness issues or contrast issues. The test is showing one contrast issue with the logo in the footer section.
 
+## **Manual Testing**
+
+### **Testing by User Stories**
+
+1. As a user, I want to see a pure and clean site with a design that is comfortable to look at, so it is easy to navigate on the site.
+     * As per WCAG color blind test and also manual testing, it is comfortable to look at the site, not very crowded, user can see which link is responsible for what and where they need to click.
+
+2. As a user, I want to be able to learn about the purpose of the website, so I know how to start using it.
+     * At the home page there is the welcome section that explains clearly the purpose of the website and also suggests and takes the user to the next step to either register or login. 
+
+3. As a user, I want to be able to create a user profile, where I can have my own database of recipes, so that I can interact with the site.
+     * User that wishes to have access to the website and have their own profile can easily create an account. There are links to register an account in both the navigation bar at the top of the page and in the wecome session as a green button. 
+
+4. As a user, I want to be able to see all recipes from all users on the main page, with a short description, difficulty and a photo, so I can easily decide what to cook.
+     * At the Home site you can see three recipes only as Recipe of the day, these are always the latest three recipes uploaded.  You can navigate to the Recipes site from the Navbar or from the button on the Home site below the Recipes of the day, where you can see all uploads from every user. 
+
+5. As a user, I want to be able to upload, edit and delete my own recipes to my own profile, so that I can manage the content.
+     * A user with a profile registered can add new recipes, edit them and delete them as well. 
+     
+6. As a user, I want to be able to click on a recipe, so that I can view it in full details.
+     * On the Recipes site or the Home site User can see recipe cards with short descriptions and a More details button. When clicked on this button, the recipe will open up and the User can read all information about the selected recipe.
+
+7. As a user, I want to be able to log in and out, so I can interact with the site.As a site user I can see a list of recipes so that I can choose which one to view.
+    * Users with a registered profile can easily log in and out of the site.User can access Login from the Navbar or at the Home site in the Welcome section.When logged in, User is being greeted by their names.
+
+### **Functional Testing**
+
+
+### Register New Account
+
+* Expected Outcome: User should be able to create a profile to be able to interact with the site. 
+* Test: Create new account with a username and password.
+* Result: New username with a password will create a new profile. If username already exists, it will not allow to use it again.  
+* Verdict: Code functions as intented.
+
+### Login
+
+* Expected Outcome: A user with registered profile you should be able to log in to your account to be able to interact with the site. If user would like the computer to remember User Name and PAssword for next time, there is a tick box for this. 
+* Test: Check Login functionality as registered user. 
+* Result: When user enters valid username and password, it takes us to the Profile site. 
+* Verdict: Code functions as intented.
+
+### Add New Recipe
+
+* Expected Outcome: A logged in user should be able to add new recipes from the Profile site. New recipe should have an image upload also. 
+* Test: After logging in and clicking on New Recipes button, User fills out all fields and uploads a picture as well.
+* Result: All fields need to be filled, otherwise user can't save the recipe. Once all filled, and clicked on Save, it takes the user back to the Profile page to all saved recipes.
+* Verdict: Code functions as intented.
+
+### Edit Recipe
+
+* Expected Outcome: On the Profile page, logged in user should have the option to edit the already uploaded recipe. When user clicks on Edit button, upload page is opened and all features of the recipe can be edited. 
+* Test: View an uploaded recipe, click Edit button and edit the recipe. 
+* Result: Edit button was clicked and the Edit page has been loaded, where all attributes of the recipe can be changed and saved afterwards without any issues. 
+* Verdict: Code functions as intented.
+
+### Delete Recipe
+
+* Expected Outcome: On the Profile page, logged in user should have the option to delete the already uploaded recipe. When user clicks on Delete button, it should have a pop up window asking for confirmation to deletion and then after authorising, remove the recipe from the list. 
+* Test: View an uploaded recipe, click Edit button and edit the recipe.  
+* Result: Delete button was clicked and the pop up window has come up to confirm deletion. After confirming, the recipe was removed from the list. 
+* Verdict: Code functions as intented.
+
+### Logout
+
+* Expected Outcome: A user with registered profile you should be able to log out of your account.
+* Test: Check Logout functionality as logged in user. 
+* Result: When Log Out button is clicked the user is logged out and redirected to home page. 
+* Verdict: Code functions as intented.
+
+
+
 ## **Deployment**
 I have followed the steps below for deployment:
 
@@ -136,15 +210,11 @@ I have followed the steps below for deployment:
     - Update the settings.py file to import the env file and add the SECRETKEY and DATABASE_URL file paths.
     - Update the Config Vars with the Cloudinary url, adding into the settings.py file also.
     - In settings.py add the following sections:
-        - Cloudinary to the INSTALLED_APPS list
-        - STATICFILE_STORAGE
-        - STATICFILES_DIRS
-        - STATIC_ROOT
-        - MEDIA_URL
-        - DEFAULT_FILE_STORAGE
-        - TEMPLATES_DIR
-        - Update DIRS in TEMPLATES with TEMPLATES_DIR
-        - Update ALLOWED_HOSTS with ['app_name.heroku.com', 'localhost']
+        - Had to the add the followings to the INSTALLED_APPS list:
+            - Cloudinary
+            - allauth ( for the register/login)
+        - STATIC_URL on separate free server
+        - Update ALLOWED_HOSTS with ['salt-and-pepper-np.herokuapp.com', 'localhost']
 
 4. Media files in Cloudinary and Deploy to Heroku:
     - Create three directories in the main directory; media, static and templates.
